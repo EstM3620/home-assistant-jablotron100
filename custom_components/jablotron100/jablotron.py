@@ -1058,6 +1058,8 @@ class Jablotron:
 			)
 
 	def _parse_pg_output_state_packet(self, packet: bytes) -> None:
+		LOGGER.debug(Jablotron.format_packet_to_string(packet))
+
 		number = Jablotron.bytes_to_int(packet[2:3])
 
 		if number < 51 or number > 114:
